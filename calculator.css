@@ -1,6 +1,9 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background: #7F00FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +46,7 @@ button {
     font-size: 24px;
     cursor: pointer;
     background-color: #333;
-    color: #fff;
+    color: blue;
     border: 1px solid #222;
     border-radius: 5px;
     transition: background-color 0.2s, color 0.2s;
@@ -53,56 +56,27 @@ button:hover {
     background-color: #555;
 }
 
-.function {
-    background-color: #F44336;
-    border: 1px solid #D32F2F;
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    .calculator {
+        width: 90%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.function:hover {
-    background-color: #D32F2F;
+@media only screen and (max-width: 400px) {
+    .calculator {
+        width: 80%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
-.operator {
-    background-color: #FF9800;
-    border: 1px solid #F57C00;
-}
-
-.operator:hover {
-    background-color: #F57C00;
-}
-
-.number {
-    background-color: #4CAF50;
-    border: 1px solid #388E3C;
-}
-
-.number:hover {
-    background-color: #388E3C;
-}
-
-.clear {
-    background-color: #9E9E9E;
-    border: 1px solid #757575;
-}
-
-.clear:hover {
-    background-color: #757575;
-}
-
-.special {
-    background-color: #2196F3;
-    border: 1px solid #1976D2;
-}
-
-.special:hover {
-    background-color: #1976D2;
-}
-
-button:active {
-    background-color: #666;
-    color: #fff;
-}
-
-button:focus {
-    outline: none;
+.function, .operator, .number, .clear, .special {
+    font-size: 18px;
 }
